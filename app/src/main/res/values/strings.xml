@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BasicKotlinDagger2</string>
+    <string name="iv_follower_image">Follower Image</string>
+    <string name="iv_follower_name">Follower Name</string>
+    <string name="tv_url_title">URL:</string>
+    <string name="tv_follower_url">Follower URL</string>
+</resources>
