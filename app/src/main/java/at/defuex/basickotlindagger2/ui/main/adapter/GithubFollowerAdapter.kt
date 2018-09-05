@@ -17,21 +17,20 @@ import com.bumptech.glide.Glide
  * Created by timoobereder on 03.12.17.
  */
 
-class GithubFollowerAdapter(private val context: Context, private val followers: List<GithubFollower>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
+class GithubFollowerAdapter(private val context: Context, private val followers: List<GithubFollower>?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
-            is GithubFollowerViewHolder -> holder.bindResult(followers[position], position)
+            is GithubFollowerViewHolder -> holder.bindResult(followers!![position], position)
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder? {
-        val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_follower, parent, false) as ViewGroup
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_follower, parent, false) as ViewGroup
         return GithubFollowerViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return followers.size
+        return followers!!.size
     }
 
     class GithubFollowerViewHolder(internal var view: View) : RecyclerView.ViewHolder(view) {

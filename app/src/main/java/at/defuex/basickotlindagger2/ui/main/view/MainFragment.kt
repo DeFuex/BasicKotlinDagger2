@@ -13,6 +13,8 @@ import at.defuex.basickotlindagger2.ui.base.view.BaseViewFragment
 import at.defuex.basickotlindagger2.ui.main.adapter.GithubFollowerAdapter
 import at.defuex.basickotlindagger2.ui.main.presenter.MainPresenter
 import butterknife.BindView
+import retrofit2.Response
+
 
 /**
  * Created by timoobereder on 03.12.17.
@@ -35,9 +37,11 @@ class MainFragment : BaseViewFragment<MainPresenter>(), MainView {
         recyclerView.setHasFixedSize(true)
     }
 
-    override fun onFollowersLoaded(objects: ArrayList<GithubFollower>) {
-        adapter = GithubFollowerAdapter(activityContext, objects)
-        recyclerView.adapter = adapter
+    override fun onFollowersLoaded(objects: ArrayList<GithubFollower>?) {
+//        this.activity.runOnUiThread {
+            adapter = GithubFollowerAdapter(activityContext, objects)
+            recyclerView.adapter = adapter
+//        }
     }
 
     override fun onNetworkError(error: String) {

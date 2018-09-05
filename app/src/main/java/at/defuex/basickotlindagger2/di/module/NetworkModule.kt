@@ -15,13 +15,13 @@ import com.google.gson.stream.JsonToken
 import com.google.gson.stream.JsonWriter
 import dagger.Module
 import dagger.Provides
-import io.reactivex.disposables.CompositeDisposable
+//import io.reactivex.disposables.CompositeDisposable
 import okhttp3.*
 
 import okhttp3.logging.HttpLoggingInterceptor
 import org.joda.time.DateTime
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+//import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 import java.lang.reflect.Type
